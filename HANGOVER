@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    float x;
+    while (1)
+    {
+        cin>>x;
+        if (x==0.00)
+        break;
+        int c=1;
+        float su=0;
+        while (su-x<0.000001)
+        {
+            su+=(float)1/(c+1);
+            //cout<<su<<" --";
+            c++;
+        }
+        c--;
+        cout<<c<<" "<<"card(s)"<<endl;
+    }
+        return 0;
+}

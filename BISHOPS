@@ -1,0 +1,9 @@
+while True:
+    try:
+        t=int(input())
+    except:
+        break
+        if t==1:
+        print(1)
+    else:
+        print(2*t-2)

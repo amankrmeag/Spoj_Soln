@@ -1,0 +1,33 @@
+#include<bits/stdc++.h>
+using namespace std;
+bool Ispossible(int *A,int n,int c,int k)
+{
+    int co=1;
+    int x=A[0];
+    for (int i=1;i<n;i++)
+    {
+                if (A[i]-x>=k)
+        {
+            x=A[i];
+        co++;
+        }
+        //cout<<x<<" "<<A[i]<<co<<endl;
+    }
+    if (co>=c)
+    {       //cout<<k<<" true"<<endl;
+            return true;
+        }
+    return false;
+}
+int binarySearch(int *A,int n,int c)
+{
+    int low=A[1]-A[0];
+    int high=A[n-1]-A[0];
+    //cout<<low<<" "<<high<<endl;
+    int result=-1;
+    int mid;
+    while (low<=high)
+    {
+        mid=low+(high-low)/2;
+        //cout<<"--->"<<mid<<endl;
+        if (Ispossible(A,n,c,mid))

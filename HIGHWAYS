@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+#define INF 1000000007
+using namespace std;
+bool *visited;
+//int *distance;
+typedef pair < int,int >  pLI;
+void SPFA(vector < vector < pLI> > &Edge,int source,int *distance)
+{
+    distance[source]=0;
+    visited[source]=true;
+    queue < int > Q;
+    Q.push(source);
+    int v,x,wt;
+    while (!Q.empty())
+    {
+        v=Q.front();
+        Q.pop();
+        visited[v]=false;
+        for (int i=0;i<Edge[v].size();i++)
+        {
+            x=Edge[v][i].second;
+            wt=Edge[v][i].first;
+            if (distance[x]>distance[v]+wt)
+            {
+                distance[x]=distance[v]+wt;
+                if (!visited[x]){
+                    Q.push(x);
+                    visited[x]=true;
+                }
+            }
+        }
+    }

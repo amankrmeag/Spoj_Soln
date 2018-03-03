@@ -1,0 +1,30 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int x,y;
+    while (1)
+    {
+            cin>>x>>y;
+    if (x==-1 && y==-1)
+        break;
+    if (x==y && y!=0)
+    cout<<1<<endl;
+    else{
+        if (x>y)
+        swap(x,y);
+    if (x==0)
+        cout<<y<<endl;
+    else{
+        int ans=(int )y/(x+1);
+        if (y%(x+1)>0)
+        ans++;
+         //ans=min(ans,y/x);
+        /*cout<<x<<endl;
+        cout<<y/(x+1)<<" "<<(y%(x+1))<<" "<<max(y/x,y%x)<<" \n";
+        */
+        cout<<ans<<endl;
+            }
+            }
+    }
+        return 0;

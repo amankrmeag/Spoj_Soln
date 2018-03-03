@@ -1,0 +1,17 @@
+#include<stdio.h>
+int main (void)
+{
+    int t;
+    scanf("%d",&t);
+    while (t--)
+    {
+        unsigned long long int n,j,k;
+        scanf("%llu",&n);
+        k=n/2;
+        j=n*(n+1)*(n+2)/6;
+        k=k*(k+1)*(4*k+5)/6;
+                if (n%2==0)
+            k=j-k;
+        printf("%llu\n",k+j);
+    }
+}

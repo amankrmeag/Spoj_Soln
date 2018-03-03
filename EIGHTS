@@ -1,0 +1,7 @@
+# your code goes here
+t=int(input())
+while t>0:
+    t-=1
+    x=int(input())
+    x=192+(250*(x-1))
+    print(x)

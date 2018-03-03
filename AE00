@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    int ans=0;
+        for (int i=1;i<=n;i++)
+    {
+        if (n/i==0)
+        {
+            break;
+        }
+        int x=(n/i)-i+1;
+                if (x<=0)
+        break;
+        else
+        ans+=x;
+        //cout<<x<<" ";
+    }
+    cout<<ans;
+    return 0;
+}

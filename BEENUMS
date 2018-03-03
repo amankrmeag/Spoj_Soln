@@ -1,0 +1,28 @@
+# your code goes here
+def Binary_search(x):
+    global Bee
+    low=0
+    high=len(Bee)-1
+    while low<=high:
+        mid=low+(high-low)//2
+        if Bee[mid]==x:
+            return True
+        elif Bee[mid]>x:
+            high=mid-1
+        else:
+            low=mid+1
+    return False
+Bee=[]
+Bee.append(1)
+i=1
+n=0
+while Bee[n]<=1000000007:
+    Bee.append(Bee[n]+6*i)
+    i+=1
+    n+=1
+while True:
+    n=int(input())
+    if n==-1: break
+    else:
+        if (Binary_search(n)): print('Y')
+        else: print('N')

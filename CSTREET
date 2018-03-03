@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+typedef pair < long long int,int >  pLI;
+long long int Prims(vector < vector < pair < long long int,int > > > &Edge,long long int pav){
+    int n=Edge.size();
+    bool *visited=new bool[n];
+    for (int i=0;i<n;i++)
+    {
+        visited[i]=false;
+    }
+    pair < long long int,int > p;
+    priority_queue < pLI,vector < pLI> ,greater< pLI> > pq;
+    pq.push(make_pair(0,0));
+    int x;
+    long long int mst=0;
+    while (!pq.empty())
+    {
+        p=pq.top();
+        pq.pop();
+        x=p.second;
+        if (visited[x]) continue;
+        visited[x]=true;
+        mst+=p.first;
+        for (int i=0;i<Edge[x].size();i++)
+        {
+            if (!visited[Edge[x][i].second])
+            {
+                pq.push(Edge[x][i]);
+            }
+        }
+    }
+    cout<<mst*pav<<endl;

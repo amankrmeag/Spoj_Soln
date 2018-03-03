@@ -1,0 +1,27 @@
+#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+int main(void)
+{
+    int n,k,l=0;
+    cin>>n;
+    vector <int> A(n);
+        for (int i=0;i<n;i++)
+    cin>>A[i];
+        cin>>k;
+    vector <int> B(n-k+1);
+    for (int i=0;i<n-k+1;i++)
+    {
+        int sum=0;
+        for (int j=i;j<k+i;j++)
+        {
+                    if (sum<A[j])
+                sum=A[j];
+                //cout<<sum<<endl;
+        }
+        B[i]=sum;
+        l++;
+    }
+    for (int i=0;i<l;i++)
+    cout<<B[i]<<" ";

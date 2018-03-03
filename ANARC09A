@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string s;
+    int t=1;
+    while (true)
+    {
+        cin>>s; 
+        if (s[0]=='-') break;
+        int c=0;
+        stack < char > st;
+        for (int i=0;s[i];i++)
+        {
+            if (s[i]=='{')
+                st.push(s[i]);
+            else if (s[i]=='}'){
+                if (!st.empty())
+                {
+                    st.pop();
+                }
+                else{
+                    c++;
+                    st.push('{');
+                }
+            }
+        }
+        while (!st.empty()){
+            //c++;
+            st.pop();
+            st.pop();
+            c++;
+        }

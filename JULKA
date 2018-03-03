@@ -1,0 +1,7 @@
+# your code goes here
+for i in range(10):
+    l=int(input())
+    k=int(input())
+    a=(l-k)//2
+    print(a+k)
+    print(a)

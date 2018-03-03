@@ -1,0 +1,17 @@
+# your code goes here
+t=int(input())
+while t>0:
+    t-=1
+    x,y,z=map(int,input().split())
+    n=2*z//(x+y)
+    if (n==1):
+        print(x,y,z)
+    else:   
+        a=((n-3)*x-2*y)//(n-5)
+        d=(x-a)//2
+        Ans=[]
+        #print(a)
+        for i in range(n):
+            Ans.append(a+i*d)
+        print(n)
+        print(*Ans)

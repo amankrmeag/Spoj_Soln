@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+#define cn(A) cin>>A;
+#define fl(n) for(int i=0;i<n;i++)
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    while (t--)
+    {
+        int n;
+        cin>>n;
+        int A[n],B[n];
+        fl(n)
+        cn(A[i]);
+        fl(n)
+        cn(B[i]);
+        sort(A,A+n);
+        sort(B,B+n);
+        int sum=0;
+        fl(n)
+        {
+            sum+=(A[i]*B[i]);
+        }
+        cout<<sum<<endl;
+    }
+}

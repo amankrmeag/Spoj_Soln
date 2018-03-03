@@ -1,0 +1,24 @@
+# your code goes here
+t=int(input())
+while t>0:
+    t-=1
+    k=int(input())
+    x=(((1+8*k)**0.5)-1)//2
+    x=int(x)
+    #print(x)
+    incr=int(x)
+    if (2*k>(x*(x+1))):
+        incr+=1
+    if x%2!=0:
+        num=1
+        den=incr
+        for i in range(k-(x*(x+1)//2)-1):
+            num+=1
+            den-=1
+    else:
+        num =incr
+        den=1
+        for i in range(k-(x*(x+1)//2)-1):
+            num-=1
+            den+=1
+    print("TERM",k,"IS",str(num)+"/"+str(den))

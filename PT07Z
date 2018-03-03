@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+#define INF 99999999
+using namespace std;
+pair< int , int > Bfs(vector < vector < int > > &Edge,int vertex)
+{
+    int n=Edge.size();
+    bool visited[n];
+    int distance[n];
+    int parent[n];
+    for (int i=0;i<n;i++)
+    {
+        visited[i]=false;
+        distance[i]=INF;
+    }
+    parent[vertex]=vertex;
+    distance[vertex]=0;
+    queue< int > Q;
+    Q.push(vertex);
+    while (!Q.empty())
+    {
+                int v=Q.front();
+    //  cout<<v+1<<endl;
+        Q.pop();
+        if (!visited[v])
+        {
+            distance[v]=min(distance[v],distance[parent[v]]+1);
+            visited[v]=true;
+                        for (int i=0;i<Edge[v].size();i++)
+            {
+                if (!visited[Edge[v][i]])
+                {
+                        Q.push(Edge[v][i]);

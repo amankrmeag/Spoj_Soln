@@ -1,0 +1,13 @@
+# your code goes here
+t=int(input())
+while t>0:
+    t-=1
+    input()
+    n=int(input())
+    l=0
+    for i in range(n):
+        l+=int(input())
+    if (l%n==0):
+        print("YES")
+    else:
+        print("NO")

@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+using namespace std;
+int find_parent(int a,int *set)
+{
+    //cout<<" p "<<a<< " ->"<<set[a]<<" ";
+    if (set[a]==a) return a;
+    int p=find_parent(set[a],set);
+    set[a]=p;
+    return p;
+}
+void update(vector < long long int > &fre,int x,int *set,int pos)
+{
+    //cout<<"Update Start\n***************************\n";
+        while (set[pos]!=pos)
+    {
+        fre[pos]=x;
+        //cout<<pos<<" -->"<<fre[pos]<<" ";
+                pos=set[pos];
+            }
+    fre[pos]=x;
+    //cout<<pos<<"-->"<<fre[pos]<<" ";
+    //cout<<"\n*******************************\n";
+}
+void union_set(int a,int b,int *set,int *rank)
+{
+/// cout<<"\n###################\n";
+    int p1=find_parent(a,set);
+    //cout<<"\n###################\n";
+    int p2=find_parent(b,set);
+    //cout<<"\n#######################\n";

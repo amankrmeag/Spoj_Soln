@@ -1,0 +1,28 @@
+#include<stdio.h>
+long long int pro[1000000]={0};
+long long int max_profit(long long int n);
+ int main(void )
+{
+ long long int num,i;int j=10;
+while (j--)
+{
+scanf("%lld",&num);
+ printf("%lld\n",max_profit(num));
+}
+return 0;
+}
+long long int max_profit(long long int n)
+{
+ if (n<12)
+return n;
+else if (n==12)
+return 13;
+if (n < 1000000)
+{
+  if (pro[n]!=0)
+return pro[n];}
+long long int s=0,p;
+//long long int a= n/2;
+//long long int b=n/3;
+//long long int c=n/4;
+s=max_profit(n/2)+max_profit(n/3)+max_profit(n/4);

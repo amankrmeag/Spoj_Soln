@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+using namespace std;
+int backTrack(int **A,int n,int m,int i,int j,int **DP)
+{
+    if (i>n-1 ||j>m-1 ||j<0)
+        return 0;
+            if (i==n-1 ) 
+    {
+        //cout<<A[i][j]<<"--->";
+        DP[i][j]=A[i][j];
+        return A[i][j];
+    }
+    if (DP[i][j]!=-1)
+        return DP[i][j];
+    int ans1=backTrack(A,n,m,i+1,j,DP);
+    int ans2=backTrack(A,n,m,i+1,j-1,DP);
+    int ans3=backTrack(A,n,m,i+1,j+1,DP);
+    //cout<<A[i][j]<<"--->";
+    DP[i][j]= A[i][j] + max(ans1,max(ans2,ans3));
+    return DP[i][j];
+    }
+int main()
+{
+    int t;
+    cin>>t;
+    while (t--)
+    {
+        int n,m;
+        cin>>n>>m;
+        int **A =new int*[n];
+        int **DP=new int*[n];
+        for (int i=0;i<n;i++)

@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+#define fl(n) for (int i=0;i<n;i++)
+#define cn(A) cin>>A
+using namespace std;
+int main()
+{
+    int n;
+    while (1)
+    {
+        cin>>n;
+        if (n==-1)
+        break;
+        int A[n];
+        fl(n)
+        cn(A[i]);
+                int mean=0;
+        fl(n)
+        mean+=A[i];
+                if (mean%n!=0)
+        {
+            cout<<-1<<endl;
+        }
+        else{
+            mean=mean/n;
+            int co=0;
+            fl(n)
+            {
+                if (A[i]>mean)
+                co+=(A[i]-mean);
+            }
+            cout<<co<<endl;
+        }

@@ -1,0 +1,34 @@
+#include <bits/stdc++.h>
+using namespace std;
+int SIZE;
+bool Compare(int *a,int *b)
+{
+    if (a[0]/SIZE !=b[0]/SIZE)
+        return a[0]<b[0];
+    return a[1]<b[1];
+}
+int main()
+{
+    //cin.sync_with_stdio(false);
+    int n;
+    //cin>>n;
+    scanf("%d",&n);
+    SIZE=(int )sqrt(n);
+    int *A=new int[n];
+    int Count[1000001];
+    for (int i=0;i<=1000000;i++) Count[i]=0;
+    for (int i=0;i<n;i++)
+    {
+        //cin>>A[i];
+        scanf("%d",&A[i]);
+    }
+    int q;
+    cin>>q;
+    int **Query=new int*[q];
+    int *Ans=new int[q];
+    for (int i=0;i<q;i++)
+    {
+        Query[i]=new int[3];
+        scanf("%d %d",&Query[i][0],&Query[i][1]);
+        Query[i][0]--;Query[i][1]--;
+        Query[i][2]=i;

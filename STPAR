@@ -1,0 +1,30 @@
+while True:
+    n=int(input())
+    if n==0:
+        break
+    else:
+        A=list(map(int,input().split()))
+        temp=A[::]
+        B=[]
+        stack=[]
+        ls=0
+        co=1
+        for i in range(n):
+            if (A[i]!=co):
+                    #print(co)
+                    if ls>0:
+                        while (stack[ls-1]==co):
+                            B.append(stack.pop())
+                            ls-=1
+                            co+=1
+                            if ls<=0:
+                                break
+                    stack.append(A[i])
+                    ls+=1
+                    continue
+                                                        else:
+                B.append(A[i])
+                co+=1
+            #print(i,B,stack)
+        while ls>0:
+            B.append(stack[ls-1])

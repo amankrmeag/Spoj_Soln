@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>
+using namespace std;
+void merge(int *A,int low ,int high,long long int &co)
+{
+    if (low==high)
+    return ;
+    else{
+        int mid=low+(high-low)/2;
+        merge(A,low,mid,co);
+        merge(A,mid+1,high,co);
+        int B[mid-low+1];
+        int C[high-mid];
+                for (int i=low;i<=mid;i++)
+            B[i-low]=A[i];
+        for (int i=mid+1;i<=high;i++) C[i-mid-1]=A[i];
+                int i=low,n1=mid-low+1,n2=high-mid,j=0,k=0;
+                while (j<n1 && k<n2)
+        {
+            if (B[j]>C[k])
+            {
+                A[i++]=C[k++];
+                co+=n1-j;
+            }
+            else{
+                A[i++]=B[j++];
+            }
+        }
+        while (j<n1){A[i++]=B[j++]; }
+        while (k<n2)A[i++]=C[k++];
+    }
+}

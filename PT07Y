@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n,m;
+    cin>>n>>m;
+    vector < vector < int > > Ed(n+1);
+            for (int i=0;i<m;i++)
+    {
+        int x,y;
+        cin>>x>>y;
+        Ed[x].push_back(y);
+        //Ed[y-1].push_back(x-1);
+            }
+    if (m!=n-1)
+    {
+        cout<<"NO\n";
+        return 0;
+    }
+    bool visited[n+1];
+    bool tre=true;
+    for (int i=0;i<=n;i++)
+        visited[i]=false;
+    //visited[0]=true;
+    stack < int > S;
+    for (int i=0;i<=n;i++)
+    {
+        if (Ed[i].size()>0)
+        {
+            S.push(i);
+            break;

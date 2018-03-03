@@ -1,0 +1,17 @@
+#include<bits/stdc++.h>
+#define Mod 1000007
+using namespace std;
+int main()
+{
+    int t;
+    cin>>t;
+    while (t--)
+    {
+        long long int n;
+        cin>>n;
+                long long int ans=n*(n-1)/2+(n*(n+1));
+        ans=ans%Mod;
+        cout<<ans<<endl;
+    }
+        return 0;
+}

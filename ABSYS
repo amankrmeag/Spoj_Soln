@@ -1,0 +1,33 @@
+#include<bits/stdc++.h>
+using namespace std;
+bool checkSt(string s)
+{
+    for (int i=0;i<s.size();i++)
+    {
+        if (s[i]=='m')
+        return true;
+    }
+    return false;
+}
+int main()
+{
+    int t;
+    cin>>t;
+    while (t--)
+    {
+        string s1,s2,s3,s4,s5;
+        cin>>s1>>s2>>s3>>s4>>s5;
+        if (checkSt(s1))
+        {
+            int a=stoi(s3);
+            int b=stoi(s5);
+            s1=to_string(b-a);
+        }
+        else if(checkSt(s3))
+        {
+            int a=stoi(s1);
+            int b=stoi(s5);
+            s3=to_string(b-a);
+        }
+        else{
+            int a=stoi(s1);

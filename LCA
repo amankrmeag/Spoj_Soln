@@ -1,0 +1,34 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+void dfs(int node ,vector < vector < int > > &Edge,int *P,bool *Visited)
+{
+    Visited[node]=true;
+    for (int i=0;i<Edge[node].size();i++)
+    {
+        if (!Visited[Edge[node][i]])
+        {
+            P[Edge[node][i]]=node;
+            dfs(Edge[node][i],Edge,P,Visited);
+        }
+    }
+}
+int Lca(int x,int y,int *P)
+{
+    int p1=x;
+    int p2=y;
+    while (p1!=p2)
+    {
+        if (p1>p2){
+            p1=P[p1];
+        }
+        else p2=P[p2];
+    }
+    return p1;
+}
+int main()
+{
+    int t;
+    cin>>t;
+    for (int it=1;it<=t;it++)
+    {

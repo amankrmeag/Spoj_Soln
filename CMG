@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    //ios_base::sync_with_stdio(false);
+    int t;
+    //cin>>t;
+    scanf("%d",&t);
+    for (int it=1;it<=t;it++)
+    {
+        int n;
+        //cin>>n;
+        scanf("%d",&n);
+        vector < int > items;
+        vector < int > mx;
+                char ch[1];
+        int s;
+                cout<<"Case "<<it<<":\n";
+        while (n--)
+        {
+            //cin>>ch;
+            //fflush(stdio);
+            scanf("%s",ch);
+        //  cout<<ch<<endl;
+            if (ch[0]=='A')
+            {
+                scanf("%d",&s);
+                //cin>>s;
+                //cout<<s<<endl;
+                items.push_back(s);
+                if (mx.size()==0){
